@@ -1,0 +1,20 @@
+ame: vps
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run VPS
+        run: sudo cloudflared service install eyJhIjoiMThhNzFlNjg5MGJmOTQzOWFkNGRjYjQ2MGVkZjQ3OTIiLCJ0IjoiMTY0N2Y5ZjUtNDkzZC00OWExLWFmMGUtZGZkZTE2MWFhMDE3IiwicyI6IlpUazVaVGcwWTJJdFpHUTFNaTAwTXpFeUxUZzRNekF0T1RVMk1qQXhZV1ZoTjJFNSJ9
